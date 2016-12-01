@@ -16,8 +16,8 @@ var mostrarEstudiantes = function(){
 
         function(response){
 
-            var plantilla = "<div>" +
-                "<img src='**foto**'>" +
+            var plantilla = "<div class='row'>" +
+                "<div class='col-xs-6'><img src='**foto**'></div>" +
                 "<p>Nombre: **nombre**</p>" +
                 "<p>Apellido: **apellido**</p>" +
                 "<p>Edad: **edad**</p>" +
