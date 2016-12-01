@@ -1,0 +1,26 @@
+{
+  "name": "demoday",
+  "version": "1.0.0",
+  "description": "aplicacion de laboratoria",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "jquery",
+    "stylus",
+    "gulp",
+    "express",
+    "npm"
+  ],
+  "author": "dkd",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0"
+  }
+}
