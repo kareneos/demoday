@@ -15,12 +15,13 @@ var mostrarEstudiantes = function(){
         "http://localhost:3000/estudiantes.json",
 
         function(response){
-
+            
             var plantilla = "<div>" +
-                "<img src='**foto**'>" +
-                "<p>Nombre: **nombre**</p>" +
-                "<p>Apellido: **apellido**</p>" +
-                "<p>Edad: **edad**</p>" +
+                "<img src='**foto**' id='fotoPerfil' alt='fotoPerfil'>" +
+                "<p id='nombrePerfil'>Nombre: **nombre**</p>" +
+                "<p id='apellidoPerfil'>Apellido: **apellido**</p>" +
+                "<p id='edadPerfil'>Edad: **edad**</p>" +
+                "<a href='perfil.html'><span class='glyphicon glyphicon-plus-sign'></span></a>"+
                 "</div>";
 //            var nombre = "<ul>";
             var l = response.length;
