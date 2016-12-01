@@ -93,10 +93,14 @@ var mostrarEstudiantes = function(){
     )
 }
 
+
 var mostrarAcordeon = function(){
     for (var i = 0; i < $(this).length; i++) {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
+        //this.classList.toggle("active");
+        //this.nextElementSibling.classList.toggle("show");
+        $(this).next().slideToggle( "slow", function() {
+            // Animation complete.
+        });
     }
 }
 
@@ -104,3 +108,10 @@ var seleccionarPuntaje = function(){
     $(this).toggleClass("seleccionado");
     $(this).siblings().removeClass("seleccionado");
 }
+
+
+    $( ".accordion" ).click(function() {
+
+    });
+
+
