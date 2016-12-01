@@ -1,14 +1,64 @@
-/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var cargaPag  = function (){
-    var tokens = location.href.split("/");
-    var html = tokens[tokens.length - 1];
-    location.href = location.href.replace(html, '');
-    console.log(location.href);
     mostrarEstudiantes();
+    $(".accordion").click(mostrarAcordeon);
+    $(".puntos").click(seleccionarPuntaje);
 }
 
 $(document).ready(cargaPag);
-*/
 
 var mostrarEstudiantes = function(){
     $.getJSON(
@@ -22,9 +72,9 @@ var mostrarEstudiantes = function(){
                 "<p>Apellido: **apellido**</p>" +
                 "<p>Edad: **edad**</p>" +
                 "</div>";
-//            var nombre = "<ul>";
+
             var l = response.length;
-//
+
             for(var i=0; i<l;i++){
                 $('#estudiantes').append(plantilla.replace("**foto**", response[i].foto)
                     .replace("**nombre**", response[i].nombre)
@@ -32,15 +82,18 @@ var mostrarEstudiantes = function(){
                     .replace("**edad**", response[i].edad));
 
             }
-
-//
-//
-//            $("#nombre").html(nombre);
-//            $("#apellido").html(apellido);
-//            $("#edad").html(edad);
-//            $("#foto").html(foto);
         }
     )
 }
 
-mostrarEstudiantes();
+var mostrarAcordeon = function(){
+    for (var i = 0; i < $(this).length; i++) {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+
+var seleccionarPuntaje = function(){
+    $(this).toggleClass("seleccionado");
+    $(this).siblings().removeClass("seleccionado");
+}
