@@ -15,29 +15,30 @@ var mostrarEstudiantes = function(){
         "http://localhost:3000/estudiantes.json",
 
         function(response){
-            var nombre = "<ul>";
-            var apellido = "<ul>";
-            var edad = "<ul>";
-            var foto = "<ul>";
-            var l = response.length;
 
+            var plantilla = "<div>" +
+                "<img src='**foto**'>" +
+                "<p>Nombre: **nombre**</p>" +
+                "<p>Apellido: **apellido**</p>" +
+                "<p>Edad: **edad**</p>" +
+                "</div>";
+//            var nombre = "<ul>";
+            var l = response.length;
+//
             for(var i=0; i<l;i++){
-                nombre += "<li>"+ response[i].nombre+"</li>";
-                apellido += "<li>"+ response[i].apellido+"</li>";
-                edad += "<li>"+ response[i].edad+"</li>";
-                foto += "<li>"+ response[i].foto+"</li>";
+                $('#estudiantes').append(plantilla.replace("**foto**", response[i].foto)
+                    .replace("**nombre**", response[i].nombre)
+                    .replace("**apellido**", response[i].apellido)
+                    .replace("**edad**", response[i].edad));
 
             }
 
-            nombre += "</ul>";
-            apellido += "</ul>";
-            edad += "</ul>";
-            foto += "</ul>";
-
-            $("#nombre").html(nombre);
-            $("#apellido").html(apellido);
-            $("#edad").html(edad);
-            $("#foto").html(foto);
+//
+//
+//            $("#nombre").html(nombre);
+//            $("#apellido").html(apellido);
+//            $("#edad").html(edad);
+//            $("#foto").html(foto);
         }
     )
 }
