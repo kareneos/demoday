@@ -1,61 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var cargaPag  = function (){
     mostrarEstudiantes();
     $(".accordion").click(mostrarAcordeon);
     $(".puntos").click(seleccionarPuntaje);
+    $("#estudiantes").on("click",".vermas", mostrarPerfil);
 }
 
 $(document).ready(cargaPag);
@@ -73,11 +20,11 @@ var mostrarEstudiantes = function(){
                 "<p>Edad: **edad**</p>" +
             */
             var plantilla = "<div class='row'>" +
-                "<div class='col-xs-4'><img src='**foto**' id='fotoPerfil' alt='fotoPerfil'></div>" +
-                "<div class='col-xs-5'><p id='nombrePerfil'>Nombre: **nombre**</p>" +
-                "<p id='apellidoPerfil'>Apellido: **apellido**</p>" +
-                    "<p id='edadPerfil'>Edad: **edad**</p></div>"+
-                "<a href='perfil.html'><span class='glyphicon glyphicon-plus-sign'></span></a>"+
+                "<div class='col-xs-4'><img src='**foto**' class='fotoPerfil' alt='fotoPerfil'></div>" +
+                "<div class='col-xs-5'><p class='nombrePerfil'>Nombre: **nombre**</p>" +
+                "<p class='apellidoPerfil'>Apellido: **apellido**</p>" +
+                    "<p class='edadPerfil'>Edad: **edad**</p></div>"+
+                "<span class='glyphicon glyphicon-plus-sign vermas' data='**i**'></span>"+
                 "</div>";
 
             var l = response.length;
@@ -86,7 +33,8 @@ var mostrarEstudiantes = function(){
                 $('#estudiantes').append(plantilla.replace("**foto**", response[i].foto)
                     .replace("**nombre**", response[i].nombre)
                     .replace("**apellido**", response[i].apellido)
-                    .replace("**edad**", response[i].edad));
+                    .replace("**edad**", response[i].edad)
+                    .replace("**i**", i+1));
 
             }
         }
@@ -103,4 +51,9 @@ var mostrarAcordeon = function(){
 var seleccionarPuntaje = function(){
     $(this).toggleClass("seleccionado");
     $(this).siblings().removeClass("seleccionado");
+}
+
+var mostrarPerfil = function(){
+    var indice = $(this).attr("data");
+    $(location).attr("href","http://localhost:3000/perfil.html" + "?data=" + indice);
 }
