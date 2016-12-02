@@ -13,11 +13,11 @@ var mostrarDatosAlumna = function(){
                         '<p>**edad**</p>'+
                     '</div>'+
                 '</div>';
-        	
+
             var rutadata = location.search;
             var igual = rutadata.indexOf("=");
             var i = rutadata.substr(igual + 1);
-            
+
             $('#mostrarDatos').append(template.replace("**foto**", response[i-1].foto)
                     .replace("**nombre**", response[i-1].nombre)
                     .replace("**apellido**", response[i-1].apellido)
