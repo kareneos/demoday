@@ -3,54 +3,54 @@
         "nombre": "Daniela",
         "apellido": "Mora",
         "edad": "26 años",
-        "foto": "img/perfil.jpg"       
+        "foto": "img/daniela.jpeg"       
     },
     {
         "nombre": "Karen",
         "apellido": "Orozco",
         "edad": "27 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/karen.jpeg"
     },
     {
         "nombre": "Diana",
         "apellido": "Navarro",
         "edad": "19 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/diana.jpeg"
     },
     {
         "nombre": "Paola",
         "apellido": "Ortiz",
         "edad": "25 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/paola.jpeg"
     },
     {
-        "nombre": "Maryori",
+        "nombre": "Mayori",
         "apellido": "Quiroz",
         "edad": "19 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/mayori.jpeg"
     },
     {
         "nombre": "Susana",
         "apellido": "Opazo",
         "edad": "25 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/susana.jpeg"
     },
     {
         "nombre": "Alexandra",
         "apellido": "Neira",
         "edad": "18 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/alexandra.jpeg"
     },
     {
         "nombre": "Elisa",
         "apellido": "Martinez",
         "edad": "25 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/elisa.jpeg"
     },
     {
         "nombre": "Maciel",
         "apellido": "Porraz",
         "edad": "27 años",
-        "foto": "img/perfil.jpg"
+        "foto": "img/maciel.jpeg"
     }
 ]
