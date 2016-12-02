@@ -1,61 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var cargaPag  = function (){
     mostrarEstudiantes();
     $(".accordion").click(mostrarAcordeon);
     $(".puntos").click(seleccionarPuntaje);
+    $("#estudiantes").on("click",".vermas", mostrarPerfil);
 }
 
 $(document).ready(cargaPag);
@@ -65,18 +12,11 @@ var mostrarEstudiantes = function(){
         "http://localhost:3000/estudiantes.json",
 
         function(response){
-            /*
             var plantilla = "<div class='row'>" +
-                "<div class='col-xs-6'><img src='**foto**'></div>" +
-                "<p>Nombre: **nombre**</p>" +
-                "<p>Apellido: **apellido**</p>" +
-                "<p>Edad: **edad**</p>" +
-            */
-            var plantilla = "<div class='row'>" +
-                "<div class='col-xs-4'><img src='**foto**' id='fotoPerfil' alt='fotoPerfil'></div>" +
-                "<div class='col-xs-5'><p id='nombrePerfil'>**nombre** **apellido**</p>" +
-                    "<p id='edadPerfil'>**edad**</p></div>"+
-                "<a href='perfil.html'><span class='glyphicon glyphicon-plus-sign'></span></a>"+
+                "<div class='col-xs-4'><img src='**foto**' class='fotoPerfil' alt='fotoPerfil'></div>" +
+                "<div class='col-xs-5'><p class='nombrePerfil'>**nombre** **apellido**</p>" +
+                    "<p class='edadPerfil'>**edad**</p></div>"+
+                "<span class='glyphicon glyphicon-plus-sign vermas' data='**i**'></span>" +
                 "</div>";
 
             var l = response.length;
@@ -85,7 +25,8 @@ var mostrarEstudiantes = function(){
                 $('#estudiantes').append(plantilla.replace("**foto**", response[i].foto)
                     .replace("**nombre**", response[i].nombre)
                     .replace("**apellido**", response[i].apellido)
-                    .replace("**edad**", response[i].edad));
+                    .replace("**edad**", response[i].edad)
+                    .replace("**i**", i+1));
 
             }
         }
@@ -113,4 +54,8 @@ var seleccionarPuntaje = function(){
 
     });
 */
+var mostrarPerfil = function(){
+    var indice = $(this).attr("data");
+    $(location).attr("href","http://localhost:3000/perfil.html" + "?data=" + indice);
+}
 
