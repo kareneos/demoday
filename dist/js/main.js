@@ -74,9 +74,8 @@ var mostrarEstudiantes = function(){
             */
             var plantilla = "<div class='row'>" +
                 "<div class='col-xs-4'><img src='**foto**' id='fotoPerfil' alt='fotoPerfil'></div>" +
-                "<div class='col-xs-5'><p id='nombrePerfil'>Nombre: **nombre**</p>" +
-                "<p id='apellidoPerfil'>Apellido: **apellido**</p>" +
-                    "<p id='edadPerfil'>Edad: **edad**</p></div>"+
+                "<div class='col-xs-5'><p id='nombrePerfil'>**nombre** **apellido**</p>" +
+                    "<p id='edadPerfil'>**edad**</p></div>"+
                 "<a href='perfil.html'><span class='glyphicon glyphicon-plus-sign'></span></a>"+
                 "</div>";
 
@@ -109,9 +108,9 @@ var seleccionarPuntaje = function(){
     $(this).siblings().removeClass("seleccionado");
 }
 
-
+/*
     $( ".accordion" ).click(function() {
 
     });
-
+*/
 
