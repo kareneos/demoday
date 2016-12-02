@@ -41,10 +41,14 @@ var mostrarEstudiantes = function(){
     )
 }
 
+
 var mostrarAcordeon = function(){
     for (var i = 0; i < $(this).length; i++) {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
+        //this.classList.toggle("active");
+        //this.nextElementSibling.classList.toggle("show");
+        $(this).next().slideToggle( "slow", function() {
+            // Animation complete.
+        });
     }
 }
 
@@ -57,3 +61,4 @@ var mostrarPerfil = function(){
     var indice = $(this).attr("data");
     $(location).attr("href","http://localhost:3000/perfil.html" + "?data=" + indice);
 }
+
